@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "home": "Início",
+    "work": "Projetos",
+    "about": "Sobre",
+    "writing": "Textos"
+  },
+  "ui": {
+    "mainNavigation": "Navegação principal",
+    "skipToContent": "Pular para o conteúdo",
+    "switchLanguage": "Switch to English",
+    "switchTheme": "Alternar tema",
+    "seeWork": "Ver projetos",
+    "viewAll": "Ver todos",
+    "contact": "Vamos conversar ↗",
+    "contentPending": "Conteúdo em preparação."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "navigation": {
+    "home": "Home",
+    "work": "Work",
+    "about": "About",
+    "writing": "Writing"
+  },
+  "ui": {
+    "mainNavigation": "Main navigation",
+    "skipToContent": "Skip to content",
+    "switchLanguage": "Mudar para português",
+    "switchTheme": "Switch theme",
+    "seeWork": "See my work",
+    "viewAll": "View all",
+    "contact": "Let's talk ↗",
+    "contentPending": "Content in progress."
+  }
+}

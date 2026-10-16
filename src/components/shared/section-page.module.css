@@ -1,0 +1,30 @@
+.main {
+  width: min(100% - 2rem, 76rem);
+  min-height: 65svh;
+  margin-inline: auto;
+  padding-block: var(--space-24);
+}
+
+.eyebrow {
+  color: var(--signal);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.main h1 {
+  margin-block: var(--space-6);
+  font-size: var(--display-lg);
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+.description {
+  max-width: 42rem;
+  margin-bottom: var(--space-8);
+  color: var(--text-secondary);
+  font-size: var(--text-lg);
+}
+
+.main a {
+  color: var(--action);
+}

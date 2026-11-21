@@ -27,10 +27,20 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
 a {
   color: inherit;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, a, select {
+  -webkit-tap-highlight-color: transparent;
 }

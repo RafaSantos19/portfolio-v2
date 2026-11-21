@@ -2,14 +2,19 @@ import type { HomeContent } from "./types";
 
 export const home: HomeContent = {
   introduction: "Hey, I'm Rafael.",
-  headline: "I build web products and internal systems.",
+  headline: "I build web products",
+  headlineMuted: "and internal systems.",
   summary: "Full Stack Developer working across requirements, architecture and implementation.",
   processTitle: "How I work",
-  process: ["Requirements", "Architecture", "Backend", "Frontend", "Delivery"],
+  processDescription: "From problem to production, with clarity at every step.",
+  process: [
+    { title: "Requirements", detail: "scope · constraints" },
+    { title: "Architecture", detail: "data · boundaries" },
+    { title: "Backend", detail: "APIs · services" },
+    { title: "Frontend", detail: "UI · components" },
+    { title: "Delivery", detail: "deploy · handoff" },
+  ],
   workTitle: "Selected work",
-  workEmpty: "Case studies will be published here.",
-  experienceTitle: "Experience",
-  experienceEmpty: "My professional experience will be detailed here.",
   capabilitiesTitle: "What I can help with",
   capabilities: [
     { title: "Web applications", description: "Digital products built around real requirements." },
@@ -18,7 +23,7 @@ export const home: HomeContent = {
     { title: "Integrations & automation", description: "Connecting services and reducing manual work." },
   ],
   writingTitle: "Recent writing",
-  writingEmpty: "Articles and technical notes will be published here.",
-  contactTitle: "Have a problem worth solving?",
+  contactTitle: "Have a problem",
+  contactTitleMuted: "worth solving?",
   contactDescription: "Open to selected projects, collaborations and interesting technical challenges.",
 };

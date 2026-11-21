@@ -12,7 +12,47 @@
     "switchTheme": "Switch theme",
     "seeWork": "See my work",
     "viewAll": "View all",
-    "contact": "Let's talk ↗",
-    "contentPending": "Content in progress."
+    "contact": "Let's talk",
+    "switchPalette": "Choose a palette",
+    "darkTheme": "Dark",
+    "lightTheme": "Light",
+    "resume": "Resume",
+    "portraitPending": "Portrait in preparation",
+    "projectImagePending": "Project image in preparation",
+    "preview": "In preparation",
+    "previewNotice": "This is a portfolio preview. The projects and writing shown here are still in preparation.",
+    "contactPending": "Contact channels will be available soon.",
+    "available": "Available for selected freelance projects",
+    "location": "São Paulo, Brazil",
+    "socialNavigation": "Social profiles and contact",
+    "stack": "Technologies",
+    "all": "All",
+    "filterProjects": "Filter projects by context",
+    "filterArticles": "Filter writing by topic",
+    "noResults": "No items in this category.",
+    "resultCount": "items found",
+    "archive": "Archive",
+    "archiveDescription": "Smaller experiments · preview",
+    "role": "Role",
+    "context": "Context",
+    "stackLabel": "Stack",
+    "caseStudy": "View case study",
+    "drafts": "In preparation",
+    "minutesRead": "min read"
+  },
+  "projectCategories": {
+    "professional": "Professional",
+    "personal": "Personal",
+    "freelance": "Freelance"
+  },
+  "articleCategories": {
+    "architecture": "Architecture",
+    "engineering": "Engineering",
+    "product": "Product"
+  },
+  "palettes": {
+    "classic": "Classic",
+    "editorial": "Editorial+",
+    "unix": "Unix-like"
   }
 }

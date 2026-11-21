@@ -2,14 +2,19 @@ import type { HomeContent } from "./types";
 
 export const home: HomeContent = {
   introduction: "Olá, eu sou Rafael.",
-  headline: "Construo produtos web e sistemas internos.",
+  headline: "Construo produtos web",
+  headlineMuted: "e sistemas internos.",
   summary: "Desenvolvedor Full Stack atuando de requisitos e arquitetura até implementação.",
   processTitle: "Como eu trabalho",
-  process: ["Requisitos", "Arquitetura", "Backend", "Frontend", "Entrega"],
+  processDescription: "Do problema à produção, com clareza em cada etapa.",
+  process: [
+    { title: "Requisitos", detail: "escopo · restrições" },
+    { title: "Arquitetura", detail: "dados · limites" },
+    { title: "Backend", detail: "APIs · serviços" },
+    { title: "Frontend", detail: "UI · componentes" },
+    { title: "Entrega", detail: "deploy · evolução" },
+  ],
   workTitle: "Projetos selecionados",
-  workEmpty: "Os estudos de caso serão publicados aqui.",
-  experienceTitle: "Experiência",
-  experienceEmpty: "Minha trajetória profissional será detalhada aqui.",
   capabilitiesTitle: "Como posso ajudar",
   capabilities: [
     { title: "Aplicações web", description: "Produtos digitais construídos em torno de necessidades reais." },
@@ -18,7 +23,7 @@ export const home: HomeContent = {
     { title: "Integrações e automação", description: "Conexão entre serviços e redução de trabalho manual." },
   ],
   writingTitle: "Textos recentes",
-  writingEmpty: "Artigos e notas técnicas serão publicados aqui.",
-  contactTitle: "Tem um problema que vale resolver?",
+  contactTitle: "Tem um problema",
+  contactTitleMuted: "que vale resolver?",
   contactDescription: "Aberto a projetos selecionados, colaborações e desafios técnicos interessantes.",
 };

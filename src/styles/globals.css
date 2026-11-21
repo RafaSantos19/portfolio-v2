@@ -9,8 +9,24 @@ body {
   background: var(--bg-page);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  line-height: 1.5;
+  font-size: var(--text-lg);
+  line-height: 1.55;
   transition: background-color var(--motion-normal) var(--motion-ease), color var(--motion-normal) var(--motion-ease);
+}
+
+main {
+  overflow-wrap: break-word;
+}
+
+section[id] {
+  scroll-margin-top: 8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 ::selection {

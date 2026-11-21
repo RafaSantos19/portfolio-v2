@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Locale } from "@/i18n/config";
 import styles from "./switches.module.css";
@@ -10,5 +9,6 @@ export function LanguageSwitch({ locale, label }: { locale: Locale; label: strin
   const nextLocale = locale === "pt" ? "en" : "pt";
   const suffix = pathname.replace(/^\/(pt|en)(?=\/|$)/, "");
 
-  return <Link className={styles.switch} href={`/${nextLocale}${suffix}`} aria-label={label}>{nextLocale.toUpperCase()}</Link>;
+  // A document navigation initializes the new language and root scripts together.
+  return <a className={styles.switch} href={`/${nextLocale}${suffix}`} hrefLang={nextLocale === "pt" ? "pt-BR" : "en"} lang={nextLocale} aria-label={label}>{nextLocale.toUpperCase()}</a>;
 }

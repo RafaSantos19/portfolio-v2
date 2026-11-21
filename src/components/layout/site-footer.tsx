@@ -1,18 +1,27 @@
+import { SocialLinks } from "@/components/shared/social-links";
 import { siteConfig } from "@/config/site";
+import type { Locale } from "@/i18n/config";
+import { getMessages } from "@/i18n/messages";
+import { PageContainer } from "./page-container";
+import { ThemeSwitch } from "./theme-switch";
+import { PaletteSwitch } from "./palette-switch";
+import { LanguageSwitch } from "./language-switch";
 import styles from "./site-footer.module.css";
 
-export function SiteFooter() {
+export function SiteFooter({ locale }: { locale: Locale }) {
+  const messages = getMessages(locale);
   return (
     <footer className={styles.footer}>
-      <div className={styles.inner}>
+      <PageContainer className={styles.inner}>
         <span>© {new Date().getFullYear()} {siteConfig.name}</span>
-        <span>{siteConfig.location}</span>
-        {(siteConfig.social.github || siteConfig.social.linkedin || siteConfig.social.email) && <div className={styles.links}>
-          {siteConfig.social.github && <a href={siteConfig.social.github}>GitHub</a>}
-          {siteConfig.social.linkedin && <a href={siteConfig.social.linkedin}>LinkedIn</a>}
-          {siteConfig.social.email && <a href={`mailto:${siteConfig.social.email}`}>Email</a>}
-        </div>}
-      </div>
+        <span>{messages.ui.location}</span>
+        <SocialLinks label={messages.ui.socialNavigation} />
+        <div className={styles.controls}>
+          <ThemeSwitch label={messages.ui.switchTheme} darkLabel={messages.ui.darkTheme} lightLabel={messages.ui.lightTheme} />
+          <PaletteSwitch label={messages.ui.switchPalette} options={messages.palettes} />
+          <LanguageSwitch locale={locale} label={messages.ui.switchLanguage} />
+        </div>
+      </PageContainer>
     </footer>
   );
 }

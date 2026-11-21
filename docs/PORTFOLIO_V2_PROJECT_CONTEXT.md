@@ -4,6 +4,11 @@
 >
 > **Regra principal:** este arquivo deve ser atualizado conforme decisões importantes forem tomadas. Não duplicar informação desnecessária; registrar apenas o que ajuda a manter consistência de produto, design e implementação.
 
+
+> **Estado em 2026-11-21:** as quatro páginas de `Wireframe/` foram transpostas para Next.js em `/pt` e `/en`, com componentes reutilizáveis, filtros, experiência e aparência persistida. Projetos e textos continuam como prévias identificadas; o design ainda está em evolução.
+>
+> Consulte [Arquitetura](ARCHITECTURE.md), [Sistema de design](DESIGN_SYSTEM.md), [Histórico](CHANGELOG.md) e [Roadmap](ROADMAP.md) para o estado implementado e as pendências atuais. Os exemplos e planos abaixo representam a direção do projeto; não significam que MDX, páginas de detalhe ou publicação estejam prontos.
+
 ---
 
 ## 1. Visão do Projeto
@@ -419,9 +424,7 @@ src/
 │           ├── _components/
 │           │   ├── hero.tsx
 │           │   ├── process-signature.tsx
-│           │   ├── experience.tsx
-│           │   ├── capabilities.tsx
-│           │   └── contact-cta.tsx
+│           │   └── capabilities.tsx
 │           │
 │           ├── work/
 │           ├── writing/
@@ -437,7 +440,8 @@ src/
 │
 ├── features/
 │   ├── projects/
-│   └── writing/
+│   ├── writing/
+│   └── experience/
 │
 ├── content/
 │   ├── pages/
@@ -1306,11 +1310,63 @@ Usar o segmento `[locale]` do App Router para `/pt` e `/en`, com redirecionament
 
 **Decision:**
 
-Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em `localStorage`. O controle de tema e a troca de idioma são componentes cliente isolados. A tipografia final permanece em aberto; a base usa fontes de sistema temporariamente.
+Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em `localStorage`. O controle de tema e a troca de idioma são componentes cliente isolados. A tipografia final permanece em aberto; a base usava fontes de sistema temporariamente; DEC-012 registra a transição para fontes locais.
+
+---
+
+### DEC-009 — Transpor as quatro páginas com composição reutilizável
+
+**Date:** 2026-11-21
+
+**Status:** Accepted
+
+**Context:** `Wireframe/` passou a conter Home, Work, About e Writing. A base tinha apenas a Home parcial e páginas internas provisórias.
+
+**Decision:** Manter o Next.js, React, TypeScript, CSS Modules e i18n existentes. Compor páginas no App Router, centralizar o shell e promover apresentações de projetos, textos, experiência, mídia e contato para componentes reutilizados. Filtros e abas ficam em features próprias.
+
+**Consequences:** O layout pode evoluir sem duplicar lógica de domínio. Os componentes locais da Home continuam locais. Nenhuma dependência adicional, incluindo shadcn/ui, foi necessária nesta etapa.
+
+---
+
+### DEC-010 — Separar prévia de publicação
+
+**Date:** 2026-11-21
+
+**Status:** Accepted
+
+**Decision:** Os exemplos do wireframe são rascunhos com aviso visível e sem links de detalhe. Metadados independentes de idioma ficam separados das traduções, associadas por IDs estáveis. O contrato exige `href` para conteúdo publicado; artigos publicados também exigem data e tempo de leitura.
+
+**Consequences:** É possível revisar a composição completa sem apresentar exemplos como entregas verificadas. As rotas de detalhe e o processador de MDX continuam pendentes. Contatos, currículo e retrato permanecem opcionais até receber dados reais.
+
+---
+
+### DEC-011 — Tema e paleta como preferências globais
+
+**Date:** 2026-11-21
+
+**Status:** Accepted; complementa DEC-008.
+
+**Decision:** Usar `data-theme` e `data-palette` no `html`, com Unix-like escuro como padrão inicial. Manter Clássica e Editorial+ disponíveis para explorar a direção visual. Persistir as escolhas em `localStorage`, sincronizar controles com `useSyncExternalStore` e inicializar por `next/script` com `beforeInteractive` no root layout.
+
+**Consequences:** Cabeçalho, rodapé e abas do navegador refletem a mesma preferência. A troca de idioma preserva o caminho e navega para um novo documento, inicializando idioma e scripts juntos; a navegação interna continua com `next/link`. Storage bloqueado não impede a interação. As paletas compartilham papéis semânticos; sua permanência na versão pública ainda pode ser revista.
+
+---
+
+### DEC-012 — Fontes locais e documentação por responsabilidade
+
+**Date:** 2026-11-21
+
+**Status:** Accepted
+
+**Decision:** Incluir Schibsted Grotesk e JetBrains Mono em WOFF2 latino com licenças SIL OFL, carregadas por `next/font/local`. Separar a documentação atual em arquitetura, sistema de design, changelog e roadmap, mantendo este contexto como visão de produto e Decision Log.
+
+**Consequences:** O build e as visitas não dependem do serviço de fontes do Google. A tipografia pode ser substituída centralmente. Mudanças de design devem atualizar os documentos afetados e registrar seu motivo; a primeira transposição não é aprovação final do design.
 
 ---
 
 ## 22. Roadmap Técnico
+
+O detalhamento atualizado está em [ROADMAP.md](ROADMAP.md). Itens de UI concluídos abaixo podem usar prévias de conteúdo; publicação depende de revisão editorial.
 
 ### Fase 1 — Foundation
 
@@ -1336,20 +1392,20 @@ Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em 
 
 ### Fase 3 — Home
 
-- [ ] Hero;
-- [ ] Interactive Signature;
-- [ ] Selected Work;
-- [ ] Experience;
-- [ ] Capabilities;
-- [ ] Stack;
-- [ ] Recent Writing;
-- [ ] CTA.
+- [x] Hero;
+- [x] Interactive Signature;
+- [x] Selected Work;
+- [x] Experience;
+- [x] Capabilities;
+- [x] Stack;
+- [x] Recent Writing;
+- [x] CTA.
 
 ### Fase 4 — Work
 
-- [ ] `/work`;
-- [ ] project previews;
-- [ ] project metadata;
+- [x] `/work`;
+- [x] project previews;
+- [x] project metadata;
 - [ ] `[slug]`;
 - [ ] MDX rendering;
 - [ ] gallery;
@@ -1357,21 +1413,21 @@ Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em 
 
 ### Fase 5 — Writing
 
-- [ ] `/writing`;
+- [x] `/writing`;
 - [ ] posts;
 - [ ] `[slug]`;
-- [ ] metadata;
+- [x] metadata;
 - [ ] MDX components;
 - [ ] syntax highlighting;
 - [ ] reading time.
 
 ### Fase 6 — Motion
 
-- [ ] CSS microinteractions;
+- [x] CSS microinteractions;
 - [ ] Motion primitives;
 - [ ] Hero reveal;
-- [ ] Interactive Signature;
-- [ ] Project previews;
+- [x] Interactive Signature;
+- [x] Project previews;
 - [ ] Page transitions;
 - [ ] avaliar necessidade real de GSAP.
 
@@ -1382,7 +1438,7 @@ Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em 
 - [ ] reduced motion;
 - [ ] responsive QA;
 - [ ] Lighthouse;
-- [ ] metadata;
+- [x] metadata;
 - [ ] OpenGraph;
 - [ ] sitemap;
 - [ ] robots;
@@ -1409,9 +1465,9 @@ Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em 
 - [x] wireframe refinado;
 - [x] direção high-fidelity inicial;
 - [ ] revisão de acessibilidade/contraste;
-- [ ] mobile;
-- [ ] tablet;
-- [ ] páginas internas.
+- [x] layouts mobile implementados; QA em dispositivos reais pendente;
+- [x] layouts tablet implementados;
+- [x] páginas internas de listagem e apresentação; detalhes pendentes.
 
 ### Código
 
@@ -1420,9 +1476,9 @@ Usar tokens semânticos em CSS e `data-theme` no elemento `html`, persistido em 
 - [x] tokens;
 - [x] i18n inicial;
 - [x] estrutura base de conteúdo;
-- [ ] componentes;
-- [ ] páginas;
-- [ ] motion.
+- [x] componentes;
+- [x] páginas;
+- [x] motion inicial em CSS;
 
 ---
 
@@ -1435,7 +1491,7 @@ Ainda precisam ser definidas:
 - [ ] biblioteca/processador de MDX;
 - [ ] tipografia final;
 - [ ] estratégia de icons;
-- [ ] mecanismo de theme switching;
+- [x] mecanismo de theme switching;
 - [ ] deploy/domain;
 - [ ] analytics;
 - [ ] syntax highlighting;

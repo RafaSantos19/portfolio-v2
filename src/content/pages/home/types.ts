@@ -1,17 +1,16 @@
 export type HomeContent = {
   introduction: string;
   headline: string;
+  headlineMuted: string;
   summary: string;
   processTitle: string;
-  process: string[];
+  processDescription: string;
+  process: { title: string; detail: string }[];
   workTitle: string;
-  workEmpty: string;
-  experienceTitle: string;
-  experienceEmpty: string;
   capabilitiesTitle: string;
   capabilities: { title: string; description: string }[];
   writingTitle: string;
-  writingEmpty: string;
   contactTitle: string;
+  contactTitleMuted: string;
   contactDescription: string;
 };

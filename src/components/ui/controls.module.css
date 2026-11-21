@@ -1,0 +1,81 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition: color var(--motion-fast), background var(--motion-fast), border-color var(--motion-fast);
+}
+
+.primary {
+  background: var(--text-primary);
+  color: var(--bg-page);
+}
+
+.primary:hover, .accent:hover {
+  background: var(--action-hover);
+  color: var(--action-text);
+  border-color: var(--action-hover);
+}
+
+.outline {
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.outline:hover {
+  background: var(--text-primary);
+  color: var(--bg-page);
+}
+
+.accent {
+  background: var(--action);
+  color: var(--action-text);
+  border-color: var(--action);
+}
+
+.button:active {
+  background: var(--action-active);
+  border-color: var(--action-active);
+  color: var(--action-text);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-6);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: var(--text-base);
+  transition: background var(--motion-fast), color var(--motion-fast);
+}
+
+.chip:hover {
+  background: var(--bg-surface-strong);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-page);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}

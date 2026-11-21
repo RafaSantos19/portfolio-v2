@@ -1,0 +1,49 @@
+.container {
+  padding-block: var(--section-space);
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-16);
+  align-items: end;
+  padding-top: var(--space-12);
+  border-top: 1px solid var(--text-primary);
+}
+
+.contact h2 {
+  font-size: var(--display-lg);
+  font-weight: 600;
+  line-height: .99;
+  letter-spacing: -.05em;
+}
+
+.contact h2 span {
+  color: var(--text-secondary);
+}
+
+.contact p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  font-size: 1.25rem;
+}
+
+.contact .pending {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+.contact nav {
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 800px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .contact h2 {
+    max-width: 16ch;
+  }
+}

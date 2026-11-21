@@ -12,7 +12,47 @@
     "switchTheme": "Alternar tema",
     "seeWork": "Ver projetos",
     "viewAll": "Ver todos",
-    "contact": "Vamos conversar ↗",
-    "contentPending": "Conteúdo em preparação."
+    "contact": "Vamos conversar",
+    "switchPalette": "Escolher paleta",
+    "darkTheme": "Escuro",
+    "lightTheme": "Claro",
+    "resume": "Currículo",
+    "portraitPending": "Retrato em preparação",
+    "projectImagePending": "Imagem do projeto em preparação",
+    "preview": "Em preparação",
+    "previewNotice": "Esta é uma prévia do portfólio. Os projetos e textos apresentados ainda estão em preparação.",
+    "contactPending": "Os canais de contato serão disponibilizados em breve.",
+    "available": "Disponível para projetos freelance selecionados",
+    "location": "São Paulo, Brasil",
+    "socialNavigation": "Redes e contato",
+    "stack": "Tecnologias",
+    "all": "Todos",
+    "filterProjects": "Filtrar projetos por contexto",
+    "filterArticles": "Filtrar textos por assunto",
+    "noResults": "Nenhum item nesta categoria.",
+    "resultCount": "itens encontrados",
+    "archive": "Arquivo",
+    "archiveDescription": "Experimentos menores · prévia",
+    "role": "Atuação",
+    "context": "Contexto",
+    "stackLabel": "Stack",
+    "caseStudy": "Ver estudo de caso",
+    "drafts": "Em preparação",
+    "minutesRead": "min de leitura"
+  },
+  "projectCategories": {
+    "professional": "Profissional",
+    "personal": "Pessoal",
+    "freelance": "Freelance"
+  },
+  "articleCategories": {
+    "architecture": "Arquitetura",
+    "engineering": "Engenharia",
+    "product": "Produto"
+  },
+  "palettes": {
+    "classic": "Clássica",
+    "editorial": "Editorial+",
+    "unix": "Unix-like"
   }
 }

@@ -1,0 +1,70 @@
+.intro {
+  padding-top: clamp(3rem, 7vw, 5.5rem);
+}
+
+.eyebrow, .meta {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.intro h1 {
+  max-width: 18ch;
+  margin-block: var(--space-6);
+  font-size: var(--display-lg);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -.05em;
+}
+
+.intro h1 span {
+  color: var(--text-secondary);
+}
+
+.lead {
+  max-width: 42rem;
+  color: var(--text-secondary);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  margin-bottom: var(--space-12);
+  border-top: 1px solid var(--text-primary);
+}
+
+.sectionHeading h2 {
+  font-size: var(--display-sm);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+
+.textLink {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-underline-offset: 6px;
+}
+
+.textLink:hover {
+  color: var(--text-accent);
+}
+
+.notice {
+  max-width: 56rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}

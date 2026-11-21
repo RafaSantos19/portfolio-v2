@@ -1,19 +1,18 @@
+import { PageContainer } from "@/components/layout/page-container";
+import { PrincipleList } from "@/components/shared/principle-list";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { siteConfig } from "@/config/site";
 import type { HomeContent } from "@/content/pages/home/types";
 import styles from "./home-sections.module.css";
 
-export function Capabilities({ title, items }: { title: string; items: HomeContent["capabilities"] }) {
+export function Capabilities({ title, items, stackLabel }: { title: string; items: HomeContent["capabilities"]; stackLabel: string }) {
   return (
-    <section className={styles.section}>
-      <div className={styles.sectionHeading}><h2>{title}</h2></div>
-      <ol className={styles.capabilities}>
-        {items.map((item, index) => (
-          <li key={item.title}>
-            <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
+    <PageContainer className={styles.section}>
+      <section aria-labelledby="capabilities-title">
+        <SectionHeading title={title} id="capabilities-title" />
+        <PrincipleList items={items} />
+        <div className={styles.stack}><span>{stackLabel}</span><ul>{siteConfig.stack.map((technology) => <li key={technology}>{technology}</li>)}</ul></div>
+      </section>
+    </PageContainer>
   );
 }

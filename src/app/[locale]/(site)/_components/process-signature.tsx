@@ -1,12 +1,16 @@
+import { PageContainer } from "@/components/layout/page-container";
+import type { HomeContent } from "@/content/pages/home/types";
 import styles from "./home-sections.module.css";
 
-export function ProcessSignature({ title, steps }: { title: string; steps: string[] }) {
+export function ProcessSignature({ title, description, steps }: { title: string; description: string; steps: HomeContent["process"] }) {
   return (
-    <section className={styles.section} aria-labelledby="process-title">
-      <h2 id="process-title" className={styles.eyebrow}>{title}</h2>
-      <ol className={styles.process}>
-        {steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}
-      </ol>
-    </section>
+    <PageContainer>
+      <section className={styles.processSection} aria-labelledby="process-title">
+        <div><h2 id="process-title" className={styles.eyebrow}>{title}</h2><p className={styles.processDescription}>{description}</p></div>
+        <ol className={styles.process} tabIndex={0} aria-label={title}>
+          {steps.map((step) => <li key={step.title}><span className={styles.dot} aria-hidden="true" /><h3>{step.title}</h3><p>{step.detail}</p></li>)}
+        </ol>
+      </section>
+    </PageContainer>
   );
 }
